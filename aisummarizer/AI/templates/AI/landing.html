@@ -4,3 +4,9 @@
     {{DocumentForm}}
     <button type="submit">summarized</button>
 </form>
+
+{% if summary %}
+<div>
+    {{summary}}
+</div>
+{%endif%}

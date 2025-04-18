@@ -15,4 +15,6 @@ def summarizerAI(name):
     response = client.models.generate_content(
         model="gemini-2.0-flash", contents=[f"Give me the summarry of the book {name}"]
     )
-    print(response.text)
+    print(response)
+    summarry = response.text
+    return summarry
