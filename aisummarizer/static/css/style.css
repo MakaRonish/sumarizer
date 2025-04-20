@@ -1,0 +1,19 @@
+.title {
+    width: 100%;
+    text-align: center;
+    border: 1px solid red;
+}
+
+.grid {
+    display: grid;
+    grid-template-areas: "1 2";
+    grid-template-columns: 1fr 2fr;
+}
+
+.form {
+    grid-area: 1;
+}
+
+.sumamarized {
+    grid-area: 2;
+}

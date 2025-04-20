@@ -1,12 +1,21 @@
-<h1>Ai</h1>
-<form action="" method="post">
-    {%csrf_token%}
-    {{DocumentForm}}
-    <button type="submit">summarized</button>
-</form>
+{% extends 'main.html' %}
+{%block title%}
+Book Summarizer
+{%endblock%}
+{%block content%}
+<section class="grid">
+    <div class="form">
+        <form action="" method="post">
+            {%csrf_token%}
+            {{DocumentForm}}
+            <button type="submit">summarized</button>
+        </form>
+    </div>
 
-{% if summary %}
-<div>
-    {{summary}}
-</div>
+    {% if summary %}
+    <div class="summarized">
+        {{summary|linebreaks }}
+    </div>
+</section>
 {%endif%}
+{%endblock%}
