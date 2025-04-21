@@ -1,19 +1,63 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 .title {
     width: 100%;
     text-align: center;
-    border: 1px solid red;
+    border: 1px solid black;
 }
 
 .grid {
     display: grid;
-    grid-template-areas: "1 2";
-    grid-template-columns: 1fr 2fr;
+    grid-template-rows: auto auto;
+    width: 100%;
+    grid-template-columns: 1fr;
 }
 
 .form {
-    grid-area: 1;
+    border: 1px solid black;
+    height: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
 }
 
-.sumamarized {
-    grid-area: 2;
+.summarized {
+    border: 1px solid paleturquoise;
+    align-items: center;
+    justify-content: center;
+}
+
+.bookdetail {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.bookdetail div label {
+    display: block;
+    text-align: center;
+
+}
+
+.bookdetail button {
+
+    height: 40px;
+    /* margin-top: 14px; */
+}
+
+
+
+
+.bookdetail div textarea {
+    height: 40px;
+    width: 900px;
+    border: 1px solid red;
+    margin-top: 10px;
+
 }

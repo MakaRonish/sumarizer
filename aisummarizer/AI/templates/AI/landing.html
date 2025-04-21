@@ -5,10 +5,12 @@ Book Summarizer
 {%block content%}
 <section class="grid">
     <div class="form">
-        <form action="" method="post">
+        <form action="" method="post" class="bookdetail">
             {%csrf_token%}
+
             {{DocumentForm}}
             <button type="submit">summarized</button>
+
         </form>
     </div>
 
