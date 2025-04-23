@@ -7,14 +7,14 @@ from .function import summarizerAI
 
 def landingpage(request):
     form = DocumentForm()
-    summary = ""
-    if request.method == "POST":
-        form = DocumentForm(request.POST)
-        data = form.save(commit=False)
-        data.save()
-        summary = summarizerAI(data.Context)
-        summary = summary.replace("*", "")
-        print(summary)
+    summary = "hehe"
+    # if request.method == "POST":
+    #     form = DocumentForm(request.POST)
+    #     data = form.save(commit=False)
+    #     data.save()
+    #     summary = summarizerAI(data.Context)
+    #     summary = summary.replace("*", "")
+    #     print(summary)
 
     context = {"DocumentForm": form, "summary": summary}
     return render(request, "AI/landing.html", context=context)
