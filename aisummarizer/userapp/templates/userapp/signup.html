@@ -1,4 +1,6 @@
 <h2>signup</h2>
-<form action="">
+<form action="" method="post">
+    {%csrf_token%}
     {{form}}
+    <button type="submit">submit</button>
 </form>

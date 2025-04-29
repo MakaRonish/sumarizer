@@ -18,5 +18,8 @@ def summarizerAI(name):
             f"Summarize the book {name} .I want a detailed yet concise summary that includes: The main plot or narrative structure Key characters and their development Major themes and messages Important events or turning points The author's purpose or style (if relevant) Please keep the summary engaging and easy to understand, like explaining it to someone who hasn’t read the book but wants to know what it’s about and why it matters.Also write in proper format like the space paragraph and all dont use unnecesarry symbols make it as professional and write atleast 1500 words"
         ],
     )
+    full_text = ""
+    for chunk in response:
+        full_text += chunk.text
 
-    return response.text
+    return full_text

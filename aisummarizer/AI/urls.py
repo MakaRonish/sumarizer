@@ -1,8 +1,8 @@
 from django.contrib import admin
 from django.urls import path
-from .views import stream_summary
+from .views import landingpage
 
 urlpatterns = [
-    # path("", landingpage, name="landingpage"),
-    path("", stream_summary, name="stream_summary"),
+    path("", landingpage, name="landingpage"),
+    # path("", stream_summary, name="stream_summary"),
 ]

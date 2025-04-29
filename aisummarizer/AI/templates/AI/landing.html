@@ -15,7 +15,8 @@ Book Summarizer
     </div>
 
     {% if summary %}
-    <div class="summarized" id="summarized">
+    <div class="summarized">
+        <p>Welcome, {{ user.username }}!</p>
 
         {{summary|linebreaksbr }}
         Atomic Habits: A Comprehensive Summary
