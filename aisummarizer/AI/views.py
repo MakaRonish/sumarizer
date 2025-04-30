@@ -3,6 +3,8 @@ from .forms import DocumentForm
 from .function import summarizerAI
 import os
 from django.http import StreamingHttpResponse
+from django.urls import reverse_lazy
+from django.contrib.auth.decorators import login_required
 
 GEMINI_API_KEY = os.getenv("GEMINI_API_KEY")
 
@@ -10,6 +12,7 @@ GEMINI_API_KEY = os.getenv("GEMINI_API_KEY")
 # Create your views here.
 
 
+@login_required(login_url=reverse_lazy("logon"))
 def landingpage(request):
     form = DocumentForm()
     summary = "hehe"
