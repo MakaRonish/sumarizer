@@ -8,7 +8,10 @@
 }
 
 body {
-    background-image: linear-gradient(19deg, #FAACA8 0%, #DDD6F3 100%);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    /* ensures smooth scrolling */
+    background-size: cover;
 }
 
 .title {

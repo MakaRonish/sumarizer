@@ -1,0 +1,48 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Courier 10 Pitch", Courier, monospace;
+
+
+}
+
+html,
+body {
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+}
+
+
+body {
+
+    background: linear-gradient(19deg, #FAACA8 0%, #DDD6F3 100%);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    /* ensures smooth scrolling */
+    background-size: cover;
+    /* stretch to cover entire screen */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.formdiv {
+    width: 25vw;
+    height: 35vh;
+    border: 1px solid black;
+    background: rgba(255, 255, 255, .1);
+    border: 2px solid rgba(255, 255, 255, .2);
+    box-shadow: 0 0 10px rgba(0, 0, 0, .2);
+    backdrop-filter: blur(50px);
+    border-radius: 10px;
+    color: #fff;
+    padding: 40px 35px 55px;
+    margin: 0 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+}
