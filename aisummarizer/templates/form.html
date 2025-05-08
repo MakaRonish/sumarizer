@@ -10,9 +10,14 @@
 </head>
 
 <body>
-
+    {%if log%}
     {%block content%}
     {%endblock%}
+
+    {%else%}
+    {%block footer%}
+    {%endblock%}
+    {%endif%}
 
 </body>
 

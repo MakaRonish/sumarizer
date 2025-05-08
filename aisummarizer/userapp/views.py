@@ -6,17 +6,19 @@ from django.contrib.auth import authenticate, logout, login
 
 
 def loginIn(request):
+    context = {"log": True}
     if request.method == "POST":
         username = request.POST["username"]
         password = request.POST["password"]
         user = authenticate(username=username, password=password)
+
         if user is not None:
             login(request, user)
             return redirect("landingpage")
         else:
             return redirect("signup")
 
-    return render(request, "userapp/login.html")
+    return render(request, "userapp/login.html", context)
 
 
 def signup(request):
@@ -33,7 +35,7 @@ def signup(request):
     else:
         form = CustomUserForm()
 
-    context = {"form": form}
+    context = {"form": form, "log": False}
     return render(request, "userapp/signup.html", context)
 
 

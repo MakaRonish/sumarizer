@@ -1,8 +1,13 @@
-<h2>signup</h2>
-<form action="" method="post">
-    {%csrf_token%}
-    {{form}}
-    <button type="submit">submit</button>
-</form>
+{% extends 'form.html' %}
+{%block footer%}
+<div class="formdiv formsignin">
+    <form action="" method="post">
+        {%csrf_token%}
+        {{form}}
+        <button type="submit" class="logButton" id="signup">Sign Up</button>
+    </form>
 
-<a href="{%url 'logon'%}">log in</a>
+
+    <a href="{%url 'logon'%}"><button class="logButton" id="login">Login</button></a>
+</div>
+{%endblock%}
