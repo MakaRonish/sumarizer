@@ -38,11 +38,62 @@ body {
     backdrop-filter: blur(50px);
     border-radius: 10px;
     color: #fff;
-    padding: 40px 35px 55px;
+    padding: 2%;
     margin: 0 10px;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
 
+}
+
+.loginForm {
+    width: 100%;
+}
+
+.formdiv input {
+    width: 100%;
+    padding: 10px;
+    border-radius: 10px;
+    margin-bottom: 5%;
+    border: none;
+    background: rgba(255, 255, 255, .1);
+    box-shadow: 0 0 10px rgba(0, 0, 0, .2);
+    backdrop-filter: blur(50px);
+    transition: box-shadow 1s;
+}
+
+.formdiv input:hover {
+    box-shadow: 0 0 20px rgba(0, 255, 255, 0.5);
+
+}
+
+.logButton {
+    width: 100%;
+    padding: 3%;
+    border: none;
+    margin-bottom: 5%;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, .2);
+    backdrop-filter: blur(50px);
+    transition: padding 0.8s, font-size 0.8s;
+
+}
+
+.logButton:hover {
+    padding: 5%;
+    font-size: 1rem;
+}
+
+.formdiv a {
+    width: 100%;
+}
+
+#login {
+    background-image: linear-gradient(135deg, #f34079 40%, #fc894d);
+}
+
+#signup {
+    background-color: initial;
+    background-image: linear-gradient(92.83deg, #ff7426 0, #f93a13 100%);
 }

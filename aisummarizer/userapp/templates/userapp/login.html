@@ -5,14 +5,14 @@
 <div class="formdiv">
     <form action="" method="post" class="loginForm">
         {%csrf_token%}
-        username
-        <input type="text" name="username">
-        password
-        <input type="password" name="password">
-        <button type="submit">submit</button>
+
+        <input type="text" name="username" placeholder="USERNAME"><br>
+
+        <input type="password" name="password" placeholder="PASSWORD"><br>
+        <button type="submit" class="logButton" id="login">Login</button>
     </form>
 
-    <a href="{%url 'signup'%}">Sign up</a>
+    <a href="{%url 'signup'%}"><button class="logButton" id="signup">Sign Up</button></a>
 
 </div>
 {%endblock%}
