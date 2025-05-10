@@ -7,12 +7,7 @@
     /* background-color: #A9C9FF; */
 }
 
-body {
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    /* ensures smooth scrolling */
-    background-size: cover;
-}
+
 
 .title {
     width: 100%;
@@ -56,10 +51,12 @@ body {
     font-family: "Courier 10 Pitch", Courier, monospace;
     font-size: 15px;
     line-height: 1.6;
-    max-width: 80%;
+    width: 80%;
     overflow: auto;
     padding: 1.6em;
     font-weight: bold;
+    min-height: 60vh;
+
 }
 
 .bookdetail {

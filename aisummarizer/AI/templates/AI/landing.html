@@ -17,43 +17,16 @@ Book Summarizer
         </form>
     </div>
 
-    {% if summary %}
+
     <div class="summarized">
-        <p>Welcome, {{ user.username }}!</p>
-
         {{summary|linebreaksbr }}
-        Atomic Habits: A Comprehensive Summary
-
-        Imagine your life as a sprawling oak tree. You admire its strength, its height, its abundance of leaves. But
-        what you don't see are the roots, the intricate network beneath the surface that feeds and sustains the
-        magnificent being above. James Clear's "Atomic Habits" is essentially a guide to cultivating those roots in your
-        own life, the tiny, often imperceptible habits that ultimately determine the trajectory of your growth and
-        success. It's not about overnight transformations or grand gestures; it's about the power of small, consistent
-        changes, the "atomic habits" that compound over time to produce extraordinary results.
-
-        The Core Premise: The Power of Compounding
-
-        At the heart of "Atomic Habits" lies the concept of compounding, borrowed from the world of finance. Just as a
-        small investment can grow exponentially over time through the magic of compound interest, so too can small
-        improvements in your habits lead to remarkable outcomes. Clear argues that improving just 1% each day isn't a
-        negligible change; it's a gateway to becoming 37 times better by the end of the year. Conversely, slipping 1%
-        each day leads to a dramatic decline. This illustrates a fundamental truth: our habits are the compound interest
-        of self-improvement.
-
-        The book's narrative structure isn't driven by a fictional plot or a central character's journey. Instead, it's
-        structured around a framework for understanding and building good habits, and breaking bad ones. Clear
-        meticulously lays out a practical and actionable system, supported by scientific research, psychological
-        principles, and real-life examples.
-
-        The Four Laws of Behavior Change: A Framework for Transformation
-
-        Clear introduces "The Four Laws of Behavior Change," a simple yet profound framework that serves as the backbone
-        of the book. These laws, each with a corresponding principle for creating good habits and breaking bad ones,
-        are:
-
-        1. The 1st Law: Make it Obvious (Awareness)
-
+    </div>
+    <div>
+        <h1>history</h1>
+        {% for book in history%}
+        {{book.Context}}<br>
+        {%endfor%}
     </div>
 </section>
-{%endif%}
+
 {%endblock%}

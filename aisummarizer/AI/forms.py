@@ -5,5 +5,5 @@ from .models import Document
 class DocumentForm(ModelForm):
     class Meta:
         model = Document
-        fields = "__all__"
+        fields = ["Context"]
         labels = {"Context": "Search book to summarize"}
