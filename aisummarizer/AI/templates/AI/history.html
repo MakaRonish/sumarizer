@@ -1,0 +1,10 @@
+{% extends 'main.html' %}
+
+{%block content%}
+<div>
+    <h1>{{history}}</h1>
+    {% for data in history%}
+    {{data.summary | linebreaksbr}}
+    {%endfor%}
+</div>
+{%endblock%}

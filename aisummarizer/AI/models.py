@@ -14,6 +14,7 @@ class Document(models.Model):
         blank=True,
         null=True,
     )
+    summary = models.TextField(blank=True, null=True)
 
     def __str__(self):
         return self.Context

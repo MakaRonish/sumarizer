@@ -28,8 +28,9 @@ def landingpage(request):
 
             data = form.save(commit=False)
             data.owner = request.user
-            data.save()
             summary = summarizerAI(data.Context)
+            data.summary = summary
+            data.save()
 
         # summary = summary.replace("*", "")
 
@@ -37,17 +38,8 @@ def landingpage(request):
     return render(request, "AI/landing.html", context=context)
 
 
-# def stream_summary(request):
-#     if request.method == "POST":
-#         form = DocumentForm(request.POST)
-#         if form.is_valid():
-#             data = form.save(commit=False)
-#             data.save()
-
-#             response = StreamingHttpResponse(
-#                 summarizerAI(data.Context), content_type="text/plain"
-#             )
-#             return response
-
-#     form = DocumentForm()
-#     return render(request, "AI/landing.html", {"DocumentForm": form})
+@login_required(login_url=reverse_lazy("logon"))
+def history(request, pk):
+    history = Document.objects.filter(id=pk)
+    context = {"history": history}
+    return render(request, "AI/history.html", context)

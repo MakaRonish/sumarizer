@@ -18,13 +18,14 @@ Book Summarizer
     </div>
 
 
+
     <div class="summarized">
         {{summary|linebreaksbr }}
     </div>
     <div>
         <h1>history</h1>
         {% for book in history%}
-        {{book.Context}}<br>
+        <a href="{%url 'book' book.id%}">{{book.Context}}</a><br>
         {%endfor%}
     </div>
 </section>
