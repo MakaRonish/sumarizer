@@ -40,6 +40,7 @@ def landingpage(request):
 
 @login_required(login_url=reverse_lazy("logon"))
 def history(request, pk):
+    form = DocumentForm()
     history = Document.objects.filter(id=pk)
-    context = {"history": history}
+    context = {"history": history, "DocumentForm": form}
     return render(request, "AI/history.html", context)
