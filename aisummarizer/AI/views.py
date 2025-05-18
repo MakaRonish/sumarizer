@@ -42,5 +42,6 @@ def landingpage(request):
 def history(request, pk):
     form = DocumentForm()
     history = Document.objects.filter(id=pk)
-    context = {"history": history, "DocumentForm": form}
+    all_history = Document.objects.filter(owner=request.user)
+    context = {"cur_history": history, "DocumentForm": form, "history": all_history}
     return render(request, "AI/history.html", context)

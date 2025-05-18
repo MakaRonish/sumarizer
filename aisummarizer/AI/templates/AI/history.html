@@ -2,30 +2,33 @@
 
 {%block content%}
 <section class="grid">
-    <div class="form">
-        <form action="{% url 'landingpage' %}" method="post" class="bookdetail">
-            {%csrf_token%}
+    <section class="innergrid">
+        <div class="form">
+            <form action="{% url 'landingpage' %}" method="post" class="bookdetail">
+                {%csrf_token%}
 
-            {{DocumentForm}}
-            <button type="submit">summarized</button>
+                {{DocumentForm}}
+                <button type="submit">summarized</button>
 
-        </form>
-    </div>
+            </form>
+        </div>
 
 
 
-    <div class="summarized">
-        {% for data in history%}
-        {{data.summary | linebreaksbr}}
-        {%endfor%}
+        <div class="summarized">
+            {% for data in cur_history%}
+            {{data.summary | linebreaksbr}}
+            {%endfor%}
 
-    </div>
-    <div>
-        <h1>history</h1>
-        {% for book in history%}
-        <a href="{%url 'book' book.id%}">{{book.Context}}</a><br>
-        {%endfor%}
-    </div>
+        </div>
+        <div class="history">
+            <h1>Past Books</h1>
+            {% for book in history%}<p>
+                <a href="{%url 'book' book.id%}">{{book.Context}}</a>
+            </p>
+            {%endfor%}
+        </div>
+    </section>
 
 </section>
 
