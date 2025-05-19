@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from .forms import DocumentForm
 from .function import summarizerAI
 import os
@@ -6,6 +6,7 @@ from django.http import StreamingHttpResponse
 from django.urls import reverse_lazy
 from django.contrib.auth.decorators import login_required
 from .models import Document
+from django.http import JsonResponse
 
 GEMINI_API_KEY = os.getenv("GEMINI_API_KEY")
 
@@ -45,3 +46,10 @@ def history(request, pk):
     all_history = Document.objects.filter(owner=request.user)
     context = {"cur_history": history, "DocumentForm": form, "history": all_history}
     return render(request, "AI/history.html", context)
+
+
+@login_required(login_url=reverse_lazy("logon"))
+def delete_book(request, pk):
+    book = Document.objects.get(id=pk)
+    book.delete()
+    return redirect("landingpage")
