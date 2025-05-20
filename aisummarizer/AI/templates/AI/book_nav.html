@@ -1,0 +1,13 @@
+<div class="history">
+    <h1>Past Books</h1>
+    {% for book in history%}<div>
+
+        <a href="{%url 'book' book.id%}"><span class="b_name">{{book.Context}} </span>
+        </a>
+        <form action="{% url 'delete' book.id %}" method="post" class="del_form">
+            {%csrf_token%}
+            <button type="submit"><span class="symbol material-symbols-outlined">delete</span></button>
+        </form>
+    </div>
+    {%endfor%}
+</div>
